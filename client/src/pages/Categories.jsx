@@ -36,43 +36,10 @@ const Categories = () => {
 			<div className="side-menu">
 
 
-				{/* {data &&
-					data.map((category) => (
-						<div key={category.categorie_id}>
-							<h3 className="filter-label">
-								{category.categorie_name}
-							</h3>
-							<ul>
-								{category.subcategories.map((subcategory, i) => (
-									<li key={i} className="filter-button" onClick={handleLiClick}>
-										<label>
-											<input type="checkbox" style={{ display: 'none' }} />
-											{subcategory.subcategory_name}
-										</label>
-									</li>
-								))}
-							</ul>
-						</div>
-					))} */}
 				{data &&
 					data.map((category) => (
 						<div key={category.categorie_id}>
-							{/* <ul>
-								<li className="category-label">{category.categorie_name}</li>
-								{category.subcategories.map((subcategory, i) => (
-									<li
-										key={i}
-										className={`subcategory-button ${i === activeIndex ? 'active' : ''}`}
-										onClick={() => handleLiClick(i)}
-									>
 
-										<label>
-											<input type="checkbox" style={{ display: 'none' }} />
-											{subcategory.subcategory_name}
-										</label>
-									</li>
-								))}
-							</ul> */}
 							<ul>
 								<li className="category-label">{category.categorie_name}</li>
 								{category.subcategories.map((subcategory, i) => (
@@ -81,10 +48,10 @@ const Categories = () => {
 										className={`subcategory-button ${activeIndices.includes(subcategory.subcategory_id) ? 'active' : ''}`}
 										onClick={() => handleLiClick(subcategory.subcategory_id)}
 									>
-										<label>
-											<input type="checkbox" style={{ display: 'none' }} />
-											{subcategory.subcategory_name}
-										</label>
+										{/* <label className="label-text"> */}
+										<input type="checkbox" style={{ display: 'none' }} />
+										{subcategory.subcategory_name}
+										{/* </label> */}
 									</li>
 								))}
 							</ul>
