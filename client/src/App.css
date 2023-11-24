@@ -1,0 +1,244 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(45deg, #141e30, #243b55);
+	font-family: monospace;
+}
+
+.container {
+	margin: 0 auto;
+	height: 100vh;
+	display: flex;
+	max-width: 1200px;
+	/* Adjust the max-width as needed */
+	padding: 20px;
+
+}
+
+.text-h2 {
+	color: #1abc9c;
+	margin-bottom: 25px;
+}
+
+.quiz-options {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+
+.container p {
+	color: #fff;
+}
+
+
+
+.page-link {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	padding: 10px 20px;
+	width: 450px;
+	height: 60px;
+	border: 2px solid #1abc9c;
+	border-radius: 10px;
+	color: #1abc9c;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.page-link:hover {
+	background-color: #1abc9c;
+	color: #fff;
+}
+
+.back-home {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	padding: 10px 15px;
+	background-color: #1abc9c;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.back-home:hover {
+	background-color: #148f77;
+}
+
+/* Add styling for the radio buttons */
+.radio-toolbar input[type="radio"] {
+	display: none;
+}
+
+.radio-toolbar label {
+	display: inline-block;
+	padding: 8px 12px;
+	color: #1abc9c;
+	cursor: pointer;
+	border: 2px solid #1abc9c;
+	border-radius: 10px;
+	margin-right: 10px;
+	transition: background-color 0.3s ease-in-out;
+	align-items: center;
+}
+
+.filter-button {
+	background-color: #1abc9c;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	transition: background-color 0.3s ease-in-out;
+	padding: 10px;
+	/* Adjust padding as needed */
+	margin: 5px;
+	/* Adjust margin as needed */
+	padding: 5px 10px;
+	list-style-type: none
+}
+
+.active {
+	background-color: #1abc9c;
+	color: #fff;
+}
+
+.filter-button:hover {
+	background-color: #117b66;
+	color: #fff;
+}
+
+.submit-btn {
+	padding: 16px 12px;
+	color: #117b66;
+	background: transparent;
+	cursor: pointer;
+	border: 2px solid #117b66;
+	border-radius: 10px;
+	margin-top: 20px;
+	width: 100%;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+	background-color: #117b66;
+	color: #fff;
+}
+
+
+.side-menu {
+	height: 100%;
+	width: 20%;
+	/* Adjust the width as needed */
+	background-color: transparent;
+	color: #fff;
+	/* Adjust the padding as needed */
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.category-checkbox {
+	margin-bottom: 10px;
+}
+
+.category-label {
+	display: block;
+	font-size: 14px;
+}
+
+.category-checkbox input {
+	margin-right: 5px;
+}
+
+.items-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 0 15px;
+	width: 80%;
+	overflow: scroll;
+
+}
+
+/* Add this to your existing CSS or create a new CSS file */
+
+.item {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	width: 250px;
+	height: 300px;
+
+}
+
+.item p {
+	margin: 0;
+	color: #555;
+	font-weight: bold;
+}
+
+
+.item p:nth-child(2) {
+	padding: 10px 0;
+	color: #555;
+	font-weight: normal;
+
+}
+
+/* Add your existing styles and global styles here */
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 8px;
+}
+
+.category-label {
+	font-weight: bold;
+}
+
+.subcategory-button {
+	cursor: pointer;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+
+	color: #fff;
+	transition: background-color 0.3s ease-in-out;
+	padding: 10px;
+	/* Adjust padding as needed */
+	margin: 5px;
+	/* Adjust margin as needed */
+	padding: 5px 10px;
+	list-style-type: none
+}
+
+.subcategory-button:hover {
+	background-color: #4caf50;
+	color: #fff;
+}
+
+.subcategory-button.active {
+	background-color: #4caf50;
+	color: #fff;
+}
+
+/* Add more styling as needed */
