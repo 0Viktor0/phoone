@@ -169,7 +169,6 @@ body {
 	padding: 0 15px;
 	width: 80%;
 	overflow: scroll;
-
 }
 
 /* Add this to your existing CSS or create a new CSS file */
@@ -242,6 +241,23 @@ li {
 .label-text {
 	cursor: pointer;
 	/* Add this to make the text cursor a pointer */
+}
+
+
+.item-card {
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	color: #fff;
+	transition: background-color 0.3s ease-in-out;
+	padding: 8px 10px;
+	width: 280px;
+	height: 300px;
+}
+
+.item-card:hover {
+	background-color: #117b66;
+	color: #fff;
 }
 
 /* Add more styling as needed */

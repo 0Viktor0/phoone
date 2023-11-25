@@ -4,10 +4,9 @@ import '../App.css';
 import '../index.css';
 
 const Categories = () => {
-
-
 	const [data, setData] = useState([]);
 	const [activeIndices, setActiveIndices] = useState([]);
+	const [items, setItems] = useState([]);
 
 	const handleLiClick = (index) => {
 		setActiveIndices((prevIndices) =>
@@ -22,7 +21,6 @@ const Categories = () => {
 		axios
 			.get('http://localhost:8080/categories')
 			.then((res) => {
-				console.log(res.data); // Log the received data
 				setData(res.data);
 			})
 			.catch((err) => {
@@ -30,54 +28,66 @@ const Categories = () => {
 			});
 	}, []);
 
+	useEffect(() => {
+		axios
+			.get('http://localhost:8080/items')
+			.then((res) => {
+				setItems(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 
 	return (
 		<div className="container">
 			<div className="side-menu">
-
-
 				{data &&
 					data.map((category) => (
 						<div key={category.categorie_id}>
-
 							<ul>
 								<li className="category-label">{category.categorie_name}</li>
-								{category.subcategories.map((subcategory, i) => (
+								{category.subcategories.map((subcategory) => (
 									<li
 										key={subcategory.subcategory_id}
 										className={`subcategory-button ${activeIndices.includes(subcategory.subcategory_id) ? 'active' : ''}`}
 										onClick={() => handleLiClick(subcategory.subcategory_id)}
 									>
-										{/* <label className="label-text"> */}
 										<input type="checkbox" style={{ display: 'none' }} />
 										{subcategory.subcategory_name}
-										{/* </label> */}
 									</li>
 								))}
 							</ul>
 						</div>
 					))}
-
-
-
-
 			</div>
 
 			<div className="items-container">
-				{/* {filteredItems.map((item, i) => (
-					<div key={i} className='item'>
-						<p>{item.category} {item.name} {item?.model}</p>
-						<p>{item.storage}</p>
-
-						<h2>{item.price}$</h2>
+				{items.map((item) => (
+					<div
+						key={item.item_id}
+						className="item-card"
+						onClick={() => console.log(item)} // Handle the click event with the item data
+					>
+						<p>{item.brand_name} {item.model}</p>
+						<p></p>
+						<p>{item.scapacity_name}</p>
+						<p>{new Date(item.release_date).toLocaleDateString()}</p> {/* Format the release date */}
+						<p>{item.os_name}</p>
+						<p>{item.display_size}</p>
+						<p>{item.processor}</p>
+						<p>{item.ram}</p>
+						<p>{item.battery_capacity}</p>
+						<p>{item.camera}</p>
 					</div>
-				))} */}
+				))}
 			</div>
 		</div>
 	);
 };
 
 export default Categories;
+
 
 
 // const [selectedFilters, setSelectedFilters] = useState([]);
