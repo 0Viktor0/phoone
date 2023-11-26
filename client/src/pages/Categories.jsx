@@ -67,21 +67,34 @@ const Categories = () => {
 					<div
 						key={item.item_id}
 						className="item-card"
-						onClick={() => console.log(item)} // Handle the click event with the item data
+						onClick={() => console.log(item)}
 					>
-						<p>{item.brand_name} {item.model}</p>
-						<p></p>
-						<p>{item.scapacity_name}</p>
-						<p>{new Date(item.release_date).toLocaleDateString()}</p> {/* Format the release date */}
-						<p>{item.os_name}</p>
-						<p>{item.display_size}</p>
-						<p>{item.processor}</p>
-						<p>{item.ram}</p>
-						<p>{item.battery_capacity}</p>
-						<p>{item.camera}</p>
+						<div className="phone-header">
+							<p>{item.brand_name} {item.model}</p>
+						</div>
+
+						<div className="item-characteristics">
+							<p>Screen size: {item.display_size}</p>
+							<p>Storage size: {item.scapacity_name}</p>
+							<p>Processor: {item.processor}</p>
+							<p>RAM: {item.ram}</p>
+							<p>Battery capacity: {item.battery_capacity}</p>
+							<p>Camera: {item.camera}</p>
+							<p>{new Date(item.release_date).toLocaleDateString()}</p>
+						</div>
+
+						<div className='phone-price'>
+							<p>{item.price}$</p>
+							<button className='phone-price__btn'>Buy</button>
+						</div>
+
+
+
+
 					</div>
 				))}
 			</div>
+
 		</div>
 	);
 };

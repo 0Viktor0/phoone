@@ -60,19 +60,20 @@ app.get("/categories", (req, res) => {
 
 app.get("/items", (req, res) => {
 	const queryItems = `
-	  SELECT
-		pc.*,
-		b.brand_name,
-		o.os_name,
-		ds.display_size,
-		sc.storage_capacity AS scapacity_name
-	  FROM
-		phone_characteristics pc
-		LEFT JOIN brands b ON pc.brand_id = b.brand_id
-		LEFT JOIN operating_systems o ON pc.os_id = o.os_id
-		LEFT JOIN display_sizes ds ON pc.display_id = ds.display_id
-		LEFT JOIN storage_capacities sc ON pc.scapacity_id = sc.scapacity_id;
-	`;
+    SELECT
+      pc.*,
+      b.brand_name,
+      o.os_name,
+      ds.display_size,
+      sc.storage_capacity AS scapacity_name,
+      pc.image_url
+    FROM
+      phone_characteristics pc
+      LEFT JOIN brands b ON pc.brand_id = b.brand_id
+      LEFT JOIN operating_systems o ON pc.os_id = o.os_id
+      LEFT JOIN display_sizes ds ON pc.display_id = ds.display_id
+      LEFT JOIN storage_capacities sc ON pc.scapacity_id = sc.scapacity_id;
+  `;
 
 	db.query(queryItems, (err, itemsData) => {
 		if (err) return res.json(err);
