@@ -1,0 +1,97 @@
+.category-checkbox {
+	margin-bottom: 10px;
+}
+
+.category-checkbox input {
+	margin-right: 5px;
+}
+
+
+.item {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	width: 250px;
+	height: 300px;
+
+}
+
+.item p {
+	margin: 0;
+	color: #555;
+	font-weight: bold;
+}
+
+
+.item p:nth-child(2) {
+	padding: 10px 0;
+	color: #555;
+	font-weight: normal;
+
+}
+
+.label-text {
+	cursor: pointer;
+	/* Add this to make the text cursor a pointer */
+}
+
+.items-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 0 15px;
+	overflow: scroll;
+}
+
+
+.item-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid #cccccc7d;
+	border-radius: 3px;
+	color: #fff;
+	transition: background-color 0.3s ease-in-out;
+	padding: 8px 10px;
+	width: 250px;
+	height: 300px;
+	position: relative;
+	background-color: #243b55;
+}
+
+.phone-header p {
+	font-weight: bold;
+	text-align: center;
+	font-size: 14px;
+	transition: 0.3s ease-in-out;
+}
+
+.phone-header img {
+	width: 250px;
+	height: 300px;
+}
+
+.phone-header p:hover {
+	color: rgb(35, 104, 202);
+	cursor: pointer;
+}
+
+.phone-price {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 15px;
+	justify-content: space-between;
+}
+
+.phone-price button {
+	cursor: pointer;
+	background: #e22929;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 10px;
+	color: #fff;
+}

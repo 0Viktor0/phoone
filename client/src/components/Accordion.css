@@ -1,0 +1,96 @@
+ul {
+	list-style-type: none;
+}
+
+.categories {
+	width: 100%;
+	max-width: 360px;
+	margin: 0 auto;
+	background: transparent;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.categories .category-title {
+	cursor: pointer;
+	display: block;
+	padding: 15px;
+	color: #a5273d;
+	font-size: 14px;
+	font-weight: 700;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.categories li i {
+	position: absolute;
+	top: 16px;
+	left: 12px;
+	font-size: 18px;
+	color: #a5273d;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.categories li i.fa-chevron-down {
+	right: 12px;
+	left: auto;
+	font-size: 16px;
+}
+
+.categories li.open .category-title {
+	color: #b63b4d;
+}
+
+.categories li.open i {
+	color: #b63b4d;
+}
+
+.categories li.open i.fa-chevron-down {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.sub-categories {
+	display: block;
+	background: transparent;
+	font-size: 14px;
+}
+
+.submenu li {
+	border-bottom: 1px solid #4b4a5e;
+}
+
+.sub-categories .subcategory-button {
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #fff;
+	padding: 10px;
+	margin: 5px;
+	padding: 8px 10px;
+	-webkit-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+.sub-categories .subcategory-button:hover {
+	background-color: #117b66;
+	color: #fff;
+}
+
+.sub-categories .subcategory-button {
+	display: block;
+	color: #d9d9d9;
+	padding: 12px;
+	padding-left: 42px;
+	-webkit-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}

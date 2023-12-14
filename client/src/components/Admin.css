@@ -1,0 +1,97 @@
+.admin {
+	display: flex;
+	height: 100vh;
+}
+
+.admin__phones {
+	min-width: 900px;
+	max-width: 1200px;
+	margin: 0 auto;
+	/* Horizontally center the container */
+	position: relative;
+	/* Required for absolute positioning of the button */
+}
+
+.phones {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	/* Add some top margin for separation */
+}
+
+
+.phones th,
+.phones td {
+	border-bottom: 2px solid #ddd;
+	padding: 8px;
+	font-size: 1rem;
+	color: #fff;
+	text-align: left;
+}
+
+.phones th {
+	font-weight: bold;
+	border-bottom: 1px solid #ddd;
+	;
+}
+
+
+.btn-delete {
+	background-color: #ff6464;
+	color: #fff;
+	padding: 5px 10px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	margin: 0 5px;
+}
+
+.btn-add {
+	background-color: #649fff;
+	color: #fff;
+	padding: 5px 10px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	margin: 0 5px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+.btn-update {
+	background-color: #7ae07a;
+	color: #fff;
+	padding: 5px 10px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+}
+
+
+
+.btn-read {
+	background-color: #58a1ae;
+	color: #fff;
+	padding: 5px 10px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+}
+
+.phones__add-phone {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 8px 16px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.phones__add-phone:hover {
+	background-color: #45a049;
+}

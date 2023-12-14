@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
-import '../App.css';
-import '../index.css';
+import axios from 'axios';
+import Accordion from '../components/Accordion';
+import '../components/Categories.css'
 
 const Categories = () => {
 	const [data, setData] = useState([]);
-	const [activeIndices, setActiveIndices] = useState([]);
 	const [items, setItems] = useState([]);
-
-	const handleLiClick = (index) => {
-		setActiveIndices((prevIndices) =>
-			prevIndices.includes(index)
-				? prevIndices.filter((i) => i !== index)
-				: [...prevIndices, index]
-		);
-		console.log(index);
-	};
+	const [selectedBrand, setSelectedBrand] = useState(null);
 
 	useEffect(() => {
 		axios
@@ -29,43 +20,31 @@ const Categories = () => {
 	}, []);
 
 	useEffect(() => {
+		const brandName = selectedBrand ? selectedBrand.brand_name : null;
+
 		axios
-			.get('http://localhost:8080/items')
+			.get(`http://localhost:8080/items?brand=${brandName}`)
 			.then((res) => {
 				setItems(res.data);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
+	}, [selectedBrand]);
+
+	const handleBrandClick = (brand) => {
+		console.log(brand);
+		setSelectedBrand(brand);
+	};
 
 	return (
 		<div className="container">
-			<div className="side-menu">
-				{data &&
-					data.map((category) => (
-						<div key={category.categorie_id}>
-							<ul>
-								<li className="category-label">{category.categorie_name}</li>
-								{category.subcategories.map((subcategory) => (
-									<li
-										key={subcategory.subcategory_id}
-										className={`subcategory-button ${activeIndices.includes(subcategory.subcategory_id) ? 'active' : ''}`}
-										onClick={() => handleLiClick(subcategory.subcategory_id)}
-									>
-										<input type="checkbox" style={{ display: 'none' }} />
-										{subcategory.subcategory_name}
-									</li>
-								))}
-							</ul>
-						</div>
-					))}
-			</div>
+			<Accordion data={data} handleBrandClick={handleBrandClick} />
 
 			<div className="items-container">
 				{items.map((item) => (
 					<div
-						key={item.item_id}
+						key={item.phone_id}
 						className="item-card"
 						onClick={() => console.log(item)}
 					>
@@ -87,65 +66,11 @@ const Categories = () => {
 							<p>{item.price}$</p>
 							<button className='phone-price__btn'>Buy</button>
 						</div>
-
-
-
-
 					</div>
 				))}
 			</div>
-
 		</div>
 	);
 };
 
 export default Categories;
-
-
-
-// const [selectedFilters, setSelectedFilters] = useState([]);
-// const [selectedStorage, setSelectedStorage] = useState([]);
-// const [filteredItems, setFilteredItems] = useState(items);
-
-// const handleFilterToggle = (selectedCategory) => {
-// 	setSelectedFilters((prevFilters) => {
-// 		if (prevFilters.includes(selectedCategory)) {
-// 			return prevFilters.filter((el) => el !== selectedCategory);
-// 		} else {
-// 			return [...prevFilters, selectedCategory];
-// 		}
-// 	});
-// }
-
-// const handleStorageToggle = (selectedStorageOption) => {
-// 	setSelectedStorage((prevStorage) => {
-// 		if (prevStorage.includes(selectedStorageOption)) {
-// 			return prevStorage.filter((el) => el !== selectedStorageOption);
-// 		} else {
-// 			return [...prevStorage, selectedStorageOption];
-// 		}
-// 	});
-// }
-
-
-// const filterItems = () => {
-// 	let tempItems = items.filter((item) => {
-// 		const categoryFilter = selectedFilters.length === 0 || selectedFilters.includes(item.category);
-// 		const storageFilter = selectedStorage.length === 0 || selectedStorage.includes(item.storage);
-// 		return categoryFilter && storageFilter;
-// 	});
-
-// 	setFilteredItems(tempItems);
-// }
-
-{/* {categories.map((storage, i) => (
-					<label key={i} className="filter-label">
-						<input
-							type="checkbox"
-							checked={selectedStorage.includes(storage)}
-							onChange={() => handleStorageToggle(storage)}
-							className="filter-checkbox"
-						/>
-						{storage}
-					</label>
-				))} */}

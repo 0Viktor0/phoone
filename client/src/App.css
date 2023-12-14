@@ -7,16 +7,17 @@
 body {
 	background: linear-gradient(45deg, #141e30, #243b55);
 	font-family: monospace;
+	overflow: hidden;
+
 }
 
 .container {
 	margin: 0 auto;
 	height: 100vh;
 	display: flex;
-	max-width: 1200px;
+	max-width: 1400px;
 	/* Adjust the max-width as needed */
 	padding: 20px;
-
 }
 
 .text-h2 {
@@ -24,57 +25,13 @@ body {
 	margin-bottom: 25px;
 }
 
-.quiz-options {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-
-
 .container p {
 	color: #fff;
 }
 
 
 
-.page-link {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	text-decoration: none;
-	padding: 10px 20px;
-	width: 450px;
-	height: 60px;
-	border: 2px solid #1abc9c;
-	border-radius: 10px;
-	color: #1abc9c;
-	font-weight: bold;
-	font-size: 20px;
-	margin-bottom: 10px;
-	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
 
-.page-link:hover {
-	background-color: #1abc9c;
-	color: #fff;
-}
-
-.back-home {
-	position: fixed;
-	top: 20px;
-	left: 20px;
-	padding: 10px 15px;
-	background-color: #1abc9c;
-	color: #fff;
-	text-decoration: none;
-	border-radius: 5px;
-	font-weight: bold;
-	transition: background-color 0.3s ease-in-out;
-}
-
-.back-home:hover {
-	background-color: #148f77;
-}
 
 /* Add styling for the radio buttons */
 .radio-toolbar input[type="radio"] {
@@ -108,11 +65,6 @@ body {
 	list-style-type: none
 }
 
-.active {
-	background-color: #1abc9c;
-	color: #fff;
-}
-
 .filter-button:hover {
 	background-color: #117b66;
 	color: #fff;
@@ -135,183 +87,235 @@ body {
 	color: #fff;
 }
 
+.wrapper {
+	margin: 0 auto;
+	text-align: center;
+}
 
-.side-menu {
-	height: 100%;
+.links {
+	display: flex;
+	flex-direction: column;
+}
+
+.disabled {
+	background-color: #d3d3d3;
+	/* Light gray background */
+	color: #a9a9a9;
+	/* Light gray text color */
+	cursor: not-allowed;
+	/* Change cursor to not-allowed */
+	border: 1px solid #ccc;
+	/* Light gray border */
+	opacity: 0.7;
+	/* Reduce opacity for a disabled look */
+	/* Add any additional styling you want for a disabled button */
+}
+
+.navbar {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 15px;
+	font-size: 18px;
+}
+
+.navbar h1 {
+	color: #117b66;
+	cursor: pointer;
+}
+
+.navbar-nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 20px;
+	/* Adjust the margin as needed */
+}
+
+.navbar-nav li {
+	display: inline-block;
+	margin-left: 15px;
+	/* Adjust the margin as needed */
+}
+
+.navbar-nav a,
+.navbar-nav button {
+	text-decoration: none;
+	color: #117b66;
+	margin: 5px 0;
+	cursor: pointer;
+}
+
+.navbar-nav button {
+	background-color: transparent;
+	border: none;
+	color: #394a46;
+	cursor: not-allowed;
+}
+
+.user a {
+	color: #117b66;
+	text-decoration: none;
+	padding: 0 5px;
+}
+
+.phone-pic {
+	width: 700px;
+	height: 525px;
+}
+
+.gradient-text {
+	font-family: "Abril Fatface", sans-serif;
+	background: linear-gradient(to right, #1abc9c, #5563de, #243b55);
+	background-size: 200% 200%;
+	animation: rainbow 2s ease-in-out infinite;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: #117b66;
+	display: block;
+	text-align: left;
+	transition: color .2s ease-in-out;
+	text-transform: uppercase;
+	font-weight: 900;
+	cursor: default;
+}
+
+.gradient-text:hover {
+	color: rgba(0, 0, 0, 0);
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+
+}
+
+.left {
+	flex: 1;
+}
+
+.right {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.text-box {
+	max-width: 700px;
+	text-align: left;
+}
+
+.page-link {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	padding: 10px 20px;
+	width: 100%;
+	height: 60px;
+	border: 2px solid #1abc9c;
+	border-radius: 10px;
+	color: #1abc9c;
+	font-weight: bold;
+	font-size: 20px;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+.page-link:hover {
+	background-color: #1abc9c;
+	color: #fff;
+}
+
+
+.paragraph-text {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+
+
+
+.phone-pic {
+	max-width: 100%;
+
+	/* Ensure the image is responsive */
+}
+
+.details-container {
+	text-align: center;
+	/* Centers the content horizontally */
+	color: #ffffff;
+	/* A light grey color, you can adjust this to any light color you prefer */
+	font-family: Arial, sans-serif;
+	height: 100vh;
+	/* Setting a clean, readable font */
+}
+
+.details-table {
+	margin: 20px auto;
+	/* Centers the table on the page */
+	border-collapse: collapse;
+	/* Removes space between borders */
 	width: 20%;
 	/* Adjust the width as needed */
-	background-color: transparent;
-	color: #fff;
-	/* Adjust the padding as needed */
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
+	font-size: 16px;
+	/* Adjust font size as needed */
 }
 
-
-.category-checkbox {
-	margin-bottom: 10px;
+.details-table th,
+.details-table td {
+	border-bottom: 1px solid #ddd;
+	/* Light grey border for the table cells */
+	padding: 8px;
+	/* Padding inside table cells */
 }
 
-.category-label {
-	display: block;
-	font-size: 14px;
+.details-table th {
+	/* Light grey background for table headers */
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	/* Align text to the left inside headers */
 }
 
-.category-checkbox input {
-	margin-right: 5px;
-}
-
-
-
-/* Add this to your existing CSS or create a new CSS file */
-
-.item {
-	border: 1px solid #ddd;
-	padding: 10px;
-	margin: 10px;
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	padding: 20px;
 	border-radius: 5px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-	background-color: #fff;
-	width: 250px;
-	height: 300px;
-
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	z-index: 100;
 }
 
-.item p {
-	margin: 0;
-	color: #555;
-	font-weight: bold;
+.modal p {
+	margin-bottom: 20px;
 }
 
-
-.item p:nth-child(2) {
-	padding: 10px 0;
-	color: #555;
-	font-weight: normal;
-
-}
-
-/* Add your existing styles and global styles here */
-
-ul {
-	list-style: none;
-	padding: 0;
-}
-
-li {
-	margin-bottom: 8px;
-}
-
-.category-label {
-	font-weight: bold;
-}
-
-.subcategory-button {
-	cursor: pointer;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	color: #fff;
-	transition: background-color 0.3s ease-in-out;
-	padding: 10px;
-	/* Adjust padding as needed */
-	margin: 5px;
-	/* Adjust margin as needed */
-	padding: 8px 10px;
-	list-style-type: none
-}
-
-.subcategory-button:hover {
-	background-color: #117b66;
-	color: #fff;
-}
-
-.subcategory-button.active {
-	background-color: #1abf9e;
-	color: #fff;
-}
-
-.label-text {
-	cursor: pointer;
-	/* Add this to make the text cursor a pointer */
-}
-
-.items-container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
-	padding: 0 15px;
-	overflow: scroll;
+.modal button {
+	margin-right: 10px;
 }
 
 
-.item-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	border: 1px solid #cccccc7d;
-	border-radius: 3px;
-	color: #fff;
-	transition: background-color 0.3s ease-in-out;
-	padding: 8px 10px;
-	width: 250px;
-	height: 300px;
-	position: relative;
-	background-color: #243b55;
-}
 
-.item-characteristics {
-	display: none;
-}
 
-.item-card:hover .item-characteristics {
-	display: block;
-}
+@keyframes rainbow {
+	0% {
+		background-position: left
+	}
 
-/* .item-characteristics {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	display: none;
-	border: none;
-	padding: 10px;
-	background-color: #117b66;
-	width: 250px;
-	height: 200px;
-	z-index: 20;
-	cursor: unset;
-} */
+	50% {
+		background-position: right
+	}
 
-.phone-header p {
-	font-weight: bold;
-	text-align: center;
-	font-size: 14px;
-	transition: 0.3s ease-in-out;
-}
-
-.phone-header img {
-	width: 250px;
-	height: 300px;
-}
-
-.phone-header p:hover {
-	color: rgb(35, 104, 202);
-	cursor: pointer;
-}
-
-.phone-price {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	font-size: 15px;
-	justify-content: space-between;
-}
-
-.phone-price button {
-	cursor: pointer;
-	background: #e22929;
-	border: none;
-	border-radius: 5px;
-	padding: 10px 10px;
-	color: #fff;
+	100% {
+		background-position: left
+	}
 }

@@ -3,25 +3,32 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home'
 import Categories from './pages/Categories'
-import Create from './pages/Create'
-import PersonalComputer from './pages/PersonalComputer'
+import Find from './pages/Find'
+import Login from './components/Login'
+import SignUp from './components/SignUp'
+import ReadItem from './components/ReadItem'
+import EditItem from './components/EditItem'
+import Admin from './components/Admin'
+import Create from './components/Create'
 
 function App() {
-	const [userAnswers, setUserAnswers] = useState([]);
 
-	const handleAnswer = (answer) => {
-		setUserAnswers([...userAnswers, answer])
-	}
 
 	return (
 		<>
 			<Router>
+
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/create" element={<Create />} />
-					<Route path="/create/:id" element={<Create onAnswer={handleAnswer} />} />
-					<Route path="/categories" element={<Categories />} />
-					<Route path="/personal" element={<PersonalComputer />} />
+					<Route path="/find" element={<Find />} />
+					<Route path="/find/:id" element={<Find />} />
+					<Route path="/items" element={<Categories />} />
+					<Route path='/login' element={<Login />} end />
+					<Route path='/signup' element={<SignUp />} end />
+					<Route path='/admin' element={<Admin />} />
+					<Route path='/create' element={<Create />} />
+					<Route path='/read/:id' element={<ReadItem />} />
+					<Route path='/edit/:id' element={<EditItem />} />
 				</Routes>
 			</Router>
 		</>
